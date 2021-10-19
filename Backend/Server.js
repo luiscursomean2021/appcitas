@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-// const dbconfig = require('./database/db');
+const dbconfig = require('./database/db');
 const app = express();
 const port = 8080;
 
@@ -19,4 +19,4 @@ const server = app.listen(port,
     }
 );
 
-module.exports = servers
+module.exports = server
