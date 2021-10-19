@@ -11,7 +11,7 @@ const animalRoute = require('./Routes/AnimalRoute');
 app.use(cors());
 app.use(express.json());
 
-app.use('/animales', animalRoute);
+app.use('/animales', animal);
 
 app.get('/', (req, res) => {
     console.log("Funciona en /");
