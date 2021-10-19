@@ -1,10 +1,9 @@
-const mongoose = require('mongoose')
-const User = require('../models/User')
-const Animal = require('../models/Animal')
+const mongoose = require('mongoose');
+const User = require('../Models/User')
+const Animal = require('../models/Animal');
 
-const dbName = 'appcitas'
-
-mongoose.connect(`mongodb://localhost/${dbName}`)
+const dbName = 'appcitas';
+mongoose.connect(`mongodb://localhost/${dbName}`);
 
 
 //Seed de usuarios
@@ -12,28 +11,34 @@ const users = [
     {
         username: 'Carlos',
         email: 'carlos@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },
     {
         username: 'David',
         email: 'david@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },{
         username: 'Luis',
         email: 'luis@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },{
         username: 'Emilio',
         email: 'emilio@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     },{
         username: 'Juan',
         email: 'juan@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     },{
         username: 'David',
         email: 'david@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     }
 ]
 
@@ -47,8 +52,7 @@ User
 
 
 // Seed de animales
-const animals = [
-    {
+const animals = [{
         nombre: 'Moddy',
         edad: '1',
         raza: 'Chow Chow',
