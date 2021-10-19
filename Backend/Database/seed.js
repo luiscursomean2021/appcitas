@@ -1,47 +1,54 @@
 const mongoose = require('mongoose');
-// const User = require('../Models/User')
+const User = require('../Models/User')
 const Animal = require('../models/Animal');
 
 const dbName = 'appcitas';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 
-// //Seed de usuarios
-// const users = [{
-//         username: 'Carlos',
-//         email: 'carlos@gmail.com',
-//         password: '12345'
-//     },
-//     {
-//         username: 'David',
-//         email: 'david@gmail.com',
-//         password: '12345'
-//     }, {
-//         username: 'Luis',
-//         email: 'luis@gmail.com',
-//         password: '12345'
-//     }, {
-//         username: 'Emilio',
-//         email: 'emilio@gmail.com',
-//         password: '12345'
-//     }, {
-//         username: 'Juan',
-//         email: 'juan@gmail.com',
-//         password: '12345'
-//     }, {
-//         username: 'David',
-//         email: 'david@gmail.com',
-//         password: '12345'
-//     }
-// ]
+//Seed de usuarios
+const users = [
+    {
+        username: 'Carlos',
+        email: 'carlos@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    },
+    {
+        username: 'David',
+        email: 'david@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    },{
+        username: 'Luis',
+        email: 'luis@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    },{
+        username: 'Emilio',
+        email: 'emilio@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    },{
+        username: 'Juan',
+        email: 'juan@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    },{
+        username: 'David',
+        email: 'david@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    }
+]
 
-// User
-//     .create(users)
-//     .then(response => {
-//         console.log('Se han creado', response.length)
-//         mongoose.connection.close()
-//     })
-//     .catch(err => console.log('Hubo un error', err))
+User
+    .create(users)
+    .then(response => {
+        console.log('Se han creado', response.length)
+        mongoose.connection.close()
+    })
+    .catch(err => console.log('Hubo un error', err))
 
 
 // Seed de animales

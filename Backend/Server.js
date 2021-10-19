@@ -18,7 +18,7 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-app.use('/animales', animal);
+app.use('/animales', animalRoute);
 
 app.get('/', (req, res) => {
     console.log("Funciona en /");
