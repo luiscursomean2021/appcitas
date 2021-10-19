@@ -16,16 +16,6 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {  
-        "sourceLocale": "en-US",  
-        "locales": {  
-          "es": {  
-            "translation": "src/locale/messages.xlf"  
-          },  
-          "en": {  
-            "translation": "src/locale/messages..xlf"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -59,12 +49,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "en": {  
-                "localize": ["en"]  
-              },  
-              "es": {  
-                "localize": ["es"]  
-              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -124,5 +108,4 @@
     }
   },
   "defaultProject": "App"
-}
 }
