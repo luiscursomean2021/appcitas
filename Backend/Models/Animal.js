@@ -7,6 +7,7 @@ let Animal = new Schema({
     raza: { type: String, require: true },
     tamanio: { type: String, require: true },
     vacunas: { type: Boolean },
+    imagen: { type: String, require: true },
     _id_usuario: { type: Schema.Types.ObjectId, ref: "usuario" }
 }, { collection: "animales" })
 
