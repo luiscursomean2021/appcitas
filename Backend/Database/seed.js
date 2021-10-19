@@ -1,10 +1,9 @@
-const mongoose = require('mongoose')
-const User = require('../models/User')
-const Animal = require('../models/Animal')
+const mongoose = require('mongoose');
+const User = require('../Models/User')
+const Animal = require('../models/Animal');
 
-const dbName = 'appcitas'
-
-mongoose.connect(`mongodb://localhost/${dbName}`)
+const dbName = 'appcitas';
+mongoose.connect(`mongodb://localhost/${dbName}`);
 
 
 //Seed de usuarios
@@ -53,8 +52,7 @@ User
 
 
 // Seed de animales
-const animals = [
-    {
+const animals = [{
         nombre: 'Moddy',
         edad: '1',
         raza: 'Chow Chow',
