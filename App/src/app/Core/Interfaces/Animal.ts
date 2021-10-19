@@ -4,5 +4,6 @@ export interface Animal {
     edad:number,
     raza:string,
     tamanio:string,
-    vacunas:boolean
+    vacunas:boolean,
+    _id_usuario: string
 }
