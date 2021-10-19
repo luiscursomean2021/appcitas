@@ -12,28 +12,34 @@ const users = [
     {
         username: 'Carlos',
         email: 'carlos@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },
     {
         username: 'David',
         email: 'david@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },{
         username: 'Luis',
         email: 'luis@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Administrador'
     },{
         username: 'Emilio',
         email: 'emilio@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     },{
         username: 'Juan',
         email: 'juan@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     },{
         username: 'David',
         email: 'david@gmail.com',
-        password: '12345'
+        password: '12345',
+        userType: 'Cliente'
     }
 ]
 
