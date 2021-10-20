@@ -28,11 +28,10 @@ export class UsersListComponent implements AfterViewInit {
   }
 
   refreshData() {
-    /*this.usersService.getUsers().subscribe(data => {
-      this.listaUsuarios = data;
+    this.userService.getUsers().subscribe(data => {
+      this.userList = data;
       this.initTableData(data);
-    });*/
-    console.log("refresh data");
+    });
   }
 
   initTableData(data:User[]) {
@@ -42,4 +41,9 @@ export class UsersListComponent implements AfterViewInit {
       this.table.dataSource = this.dataSource;
   }
 
+  delete(id:string){
+    this.userService.deleteUser(id).subscribe(data => {
+      this.refreshData();
+    })
+  }
 }
