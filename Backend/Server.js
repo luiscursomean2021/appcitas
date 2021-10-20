@@ -106,7 +106,7 @@ app.post('/login', async(req, res) => {//post login
         //console.log(data);
         let claveChek=  await bcrypt.compare(user.password,data.password);//comparo la clave que tiene (haciendo un decript(compare))
         if(claveChek){//si es afirmativo esto haz un payload y el token envia todos los datos por token
-            let payload = {user:data.username,id:data._id}//envio datos como id username y tipo usuario
+            let payload = {username:data.username,id:data._id,userType:data.userType}//envio datos como id username y tipo usuario
         let token = jwt.sign(payload,configs.claveSecreta,{expiresIn:1440});// creo el token con el payload el configs secreto y el tiempo 30mins
         res.json({msg:"conseguido funciona", token:token})//saco mensajto de que funciona
         //console.log(data);
