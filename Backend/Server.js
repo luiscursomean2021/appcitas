@@ -6,7 +6,7 @@ const port = 8080;
 const mongoose = require('mongoose');
 
 //ROUTERS
-
+const userRoute = require('./Routes/UserRoute');
 const animalRoute = require('./Routes/AnimalRoute');
 //Conexion a la BBDD
 mongoose.Promise = global.Promise;
@@ -19,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/animales', animalRoute);
+app.use('/users', userRoute);
 
 app.get('/', (req, res) => {
     console.log("Funciona en /");
