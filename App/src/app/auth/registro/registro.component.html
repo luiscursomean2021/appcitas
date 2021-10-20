@@ -1,0 +1,53 @@
+
+<form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="register-card">
+      <mat-card-header>
+        <mat-card-title class="titulo">Registrarse</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Insert your Email" formControlName="email">
+              <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Insert your Username" formControlName="username"  />
+              <mat-error *ngIf="registerForm.controls['username'].hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+  
+  
+  
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Insert your Password" formControlName="password"  type="password"/>
+              <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+        </div>
+  
+      </mat-card-content>
+      <mat-card-actions  class="centrado">
+        <button class="btnregister" [disabled] = "registerForm.invalid"mat-flat-button color="primary" type="submit">Sign In</button> 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;     
+         <button class="btnback" mat-flat-button color="primary" (click)="getBack()">Back<source media="(min-width: )" srcset=""></button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
