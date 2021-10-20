@@ -37,10 +37,10 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
             <td mat-cell *matCellDef="let row">
-                <button mat-button>
+                <button mat-button (click)="delete(row)">
                   <mat-icon color="warn">delete</mat-icon>
                 </button>
-                <button mat-button><mat-icon color="primary">edit</mat-icon></button> =======
+                <button mat-button><mat-icon color="primary" routerLink="{{row._id}}">edit</mat-icon></button>
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
                 <td mat-cell *matCellDef="let row">{{row.name}}</td>
         </ng-container>
