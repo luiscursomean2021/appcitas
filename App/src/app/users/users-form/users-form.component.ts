@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/Core/Interfaces/User';
 import { UsersService } from 'src/app/Core/Services/users.service';
@@ -14,7 +14,6 @@ export class UsersFormComponent {
   user!: User;
   formGroup!: FormGroup;
 
- 
   constructor(private userService:UsersService, private route:ActivatedRoute, private router:Router, private formBuilder: FormBuilder) {
     this.populateNewUser();
   }

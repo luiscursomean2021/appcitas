@@ -16,10 +16,9 @@ export class UsersListComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<User>;
   dataSource!: UsersListDataSource;
-  userList: User[] = [];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'username', 'email', 'password'];
+  displayedColumns = ['id', 'username', 'email', 'acciones'];
 
   constructor(private userService: UsersService) {}
 
@@ -29,7 +28,6 @@ export class UsersListComponent implements AfterViewInit {
 
   refreshData() {
     this.userService.getUsers().subscribe(data => {
-      this.userList = data;
       this.initTableData(data);
     });
   }

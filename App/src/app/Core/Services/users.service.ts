@@ -12,13 +12,15 @@ export class UsersService {
 
   constructor(private http:HttpClient, private route: Router) { }
 
-  url = "http://localhost:8080/";
+  url = "http://localhost:8080/users/";
   
   getUsers():Observable<any> {
     return this.http.get(this.url);
   }
 
   insertUser(user:User):Observable<any>{
+    console.log("insert");
+    console.log(user);
     return this.http.post(this.url, user, {responseType: "json"})
     .pipe(
       catchError(e => {
