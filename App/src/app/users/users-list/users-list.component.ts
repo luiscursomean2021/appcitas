@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { User } from 'src/app/Core/Interfaces/User';
+import { UsersService } from 'src/app/Core/Services/users.service';
 import { UsersListDataSource } from './users-list-datasource';
 
 @Component({
@@ -15,18 +16,19 @@ export class UsersListComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<User>;
   dataSource!: UsersListDataSource;
+  userList: User[] = [];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'username', 'email', 'password'];
 
-  constructor() {}
+  constructor(private userService: UsersService) {}
 
   ngAfterViewInit(): void {
     this.refreshData();
   }
 
   refreshData() {
-    /*this.usersService.getUsuarios().subscribe(data => {
+    /*this.usersService.getUsers().subscribe(data => {
       this.listaUsuarios = data;
       this.initTableData(data);
     });*/
