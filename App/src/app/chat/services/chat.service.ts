@@ -9,7 +9,7 @@ export class ChatService {
 
   constructor() { }
 
-  private URL_CHAT = "http://localhost:8080";
+  private URL_CHAT = "http://localhost:4005";
   private socket = io.io(this.URL_CHAT, {
     withCredentials: true,
   });

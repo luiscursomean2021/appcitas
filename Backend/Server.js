@@ -19,7 +19,8 @@ mongoose.connect(dbconfig.db, { useNewUrlParser: true }).then(() => {
 const usuariosRoute = require('./routes/UserRoute');
 const animalesRoute = require('./routes/AnimalRoute');
 const Usuario = require('./models/User');
-const port = 4000;
+const puertoApp = 4000;
+const puertoChat=4005;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -36,7 +37,7 @@ mongoose.connect(dbconfig.db, { useNewUrlParser: true }).then(() => {
 
 //Creación y puesta a la escucha del server del chat
 const http = require('http');
-app.set("port", port);
+app.set("port", puertoChat);
 var server = http.createServer(app);
 //Hay que anadir el cors
 var io = require("socket.io")(server, {
@@ -60,9 +61,9 @@ io.on("connection", (socket) => {
     })
 });
 
-server.listen(port,
+server.listen(puertoChat,
     () => {
-        console.log('Servidor Iniciado:  http://localhost:' + port)
+        console.log('Servidor Chat Iniciado:  http://localhost:' + puertoChat)
     }
 );
 
@@ -103,9 +104,9 @@ app.post('/login', async(req, res) => {//post login
         }
        else{
         //console.log(data);
-        let claveChek=  await bcrypt.compare(user.clave,data.clave);//comparo la clave que tiene (haciendo un decript(compare))
+        let claveChek=  await bcrypt.compare(user.password,data.password);//comparo la clave que tiene (haciendo un decript(compare))
         if(claveChek){//si es afirmativo esto haz un payload y el token envia todos los datos por token
-            let payload = {user:data.username,id:data._id,tipoUsuario:data.tipoUsuario}//envio datos como id username y tipo usuario
+            let payload = {user:data.username,id:data._id}//envio datos como id username y tipo usuario
         let token = jwt.sign(payload,configs.claveSecreta,{expiresIn:1440});// creo el token con el payload el configs secreto y el tiempo 30mins
         res.json({msg:"conseguido funciona", token:token})//saco mensajto de que funciona
         //console.log(data);
@@ -120,8 +121,8 @@ app.post('/register',async (req, res) => {
      const salt = await bcrypt.genSalt(12);//encripto en formato 12 quie es el generico
     var newuser = new Usuario(req.body);//new schema desde req.body no duplicado
   //  console.log(newuser);
-    const passwordHas = await bcrypt.hash(newuser.clave,salt);//hash sin sync por await metodfo async convierto la clave
-    newuser.clave =passwordHas;// paso a la variable de arriba new user la nueva clave hasheada
+    const passwordHas = await bcrypt.hash(newuser.password,salt);//hash sin sync por await metodfo async convierto la clave
+    newuser.password =passwordHas;// paso a la variable de arriba new user la nueva clave hasheada
   //  console.log(newuser);
     newuser.save(function(err,savedUser){//guardo los datos del usuario
         if(err){ 
@@ -162,6 +163,10 @@ app.get('/', (req, res) => {
     console.log("Holaaa estamos en /");
     res.send("Hello world!!!!!! Server Citas!!!!!");
 });
+
+const servidor = app.listen(puertoApp, () => {
+    console.log('Servidor App Iniciado:  http://localhost:'+ puertoApp);
+})
 
 /*
 const port = 4000;
