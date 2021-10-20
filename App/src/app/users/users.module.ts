@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { UsersRoutingModule } from './users-routing.module';
 import { UsersFormComponent } from './users-form/users-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,13 +15,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 
-
 @NgModule({
-  declarations: [
-  UsersFormComponent,
-  UsersListComponent],
+  declarations: [UsersFormComponent, UsersListComponent],
   imports: [
     CommonModule,
+    UsersRoutingModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,

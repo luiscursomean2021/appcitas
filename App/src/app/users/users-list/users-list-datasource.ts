@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { User } from 'Backend/Models/User';
+import { User } from 'src/app/Core/Interfaces/User';
 
 /**
  * Data source for the UsersList view. This class should
@@ -74,8 +74,7 @@ export class UsersListDataSource extends DataSource<User> {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
         case 'username': return compare(a.username, b.username, isAsc);
-        case 'email': return compare(a.email, b.username, isAsc);
-        case 'password': return compare(a.password, b.password, isAsc);
+        case 'email': return compare(+a.email, +b.email, isAsc);
         default: return 0;
       }
     });
