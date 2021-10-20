@@ -28,6 +28,8 @@ export class RegistroComponent  {
     const error_si_existe = 409;
     if(err instanceof HttpErrorResponse)
     {
+      console.log(err);
+      
       if(err.status == error_si_existe)
       {
         alert("Email already exist");

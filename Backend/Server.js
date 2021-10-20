@@ -19,7 +19,7 @@ mongoose.connect(dbconfig.db, { useNewUrlParser: true }).then(() => {
 const usuariosRoute = require('./routes/UserRoute');
 const animalesRoute = require('./routes/AnimalRoute');
 const Usuario = require('./models/User');
-const port = 8082;
+const port = 4000;
 const app = express();
 app.use(cors());
 app.use(express.json());
