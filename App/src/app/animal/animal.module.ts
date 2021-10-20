@@ -10,6 +10,8 @@ import { FormComponent } from './form/form.component';
 import { AnimalComponent } from './animal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { AnimalService } from '../Core/Services/Animal.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatPaginatorModule,
     MatSortModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
+  ],
+  providers:[
+    AnimalService
   ]
 })
 export class AnimalModule { }
