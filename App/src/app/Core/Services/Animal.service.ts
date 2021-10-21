@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Animal } from '../Interfaces/Animal';
 
@@ -20,18 +20,24 @@ export class AnimalService {
     );
   }
 
-  getOne(animal: Animal): Observable<any> {
-    let url = this.urlBase + animal._id;
+  getAnimal(id: string): Observable<any> {
+    let url = this.urlBase + id;
     return this.http.get(url).pipe(
-      map(res => res),
+      map(res => {
+        console.log(res);
+        return res;
+      }),
       catchError(e => e)
     );
   }
 
   create(animal: Animal): Observable<any> {
-    return this.http.post(this.urlBase,animal).pipe(
-      map(res => res),
-      catchError(e => e)
+    console.log(animal)
+    return this.http.post(this.urlBase,animal,{ responseType: 'json' }).pipe(
+      catchError(e => {
+        console.log(e);
+        return throwError(e)
+      })
     );
   }
 
