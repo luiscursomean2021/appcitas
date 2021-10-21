@@ -28,7 +28,7 @@ export class UsersFormComponent {
             this.user = data;
             this.buildUserForm();
           } else {
-            this.router.navigate(["/tienda/usuarios"]);
+            this.router.navigate(["/users"]);
           }
         })
       }
