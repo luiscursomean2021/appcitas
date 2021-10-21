@@ -44,8 +44,6 @@ export class UsersFormComponent {
       username: '',
       email: '',
       password: '',
-      favoritos: [''],
-      bloqueos: ['']
     }
   }
 
