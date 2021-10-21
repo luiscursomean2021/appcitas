@@ -6,7 +6,7 @@ import { User } from '../Core/Interfaces/User';
 
 //Servicios
 import { AnimalService } from '../Core/Services/Animal.service'
-import { UserService } from '../Core/Services/users.service'
+import { UsersService } from '../Core/Services/users.service'
 
 @Component({
   selector: 'app-favoritos',
@@ -20,7 +20,7 @@ export class FavoritosComponent implements OnInit {
   userData!: User;
   listaFavoritos: Animal[] = [];
 
-  constructor(private animalService: AnimalService, private userService: UserService) { }
+  constructor(private animalService: AnimalService, private userService: UsersService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -33,7 +33,7 @@ export class FavoritosComponent implements OnInit {
       token = JSON.parse(atob(token.split('.')[1]));
     }
     let idUser = token.id;
-    
+
     this.userService.findUserById(idUser).subscribe(data => {
       this.userData = data;
       this.getAnimales();

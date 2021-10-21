@@ -6,7 +6,7 @@ import { User } from '../Core/Interfaces/User';
 
 //Servicios
 import { AnimalService } from '../Core/Services/Animal.service'
-import { UserService } from '../Core/Services/users.service'
+import { UsersService } from '../Core/Services/users.service'
 
 @Component({
   selector: 'app-animal-list',
@@ -18,7 +18,7 @@ export class AnimalListComponent implements OnInit {
   userData!: User;
   listaAnimalesUser: Animal[] = [];
 
-  constructor(private animalService: AnimalService, private userService: UserService) { }
+  constructor(private animalService: AnimalService, private userService: UsersService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -75,8 +75,8 @@ export class AnimalListComponent implements OnInit {
 
   //Añadir a la lista de Favoritos
   addFavoritos(idAnimal: string) {
-    let updateUser = this.userData.favoritos.push(idAnimal)
-    this.userService.editUser(this.userData._id, updateUser)
+    // let updateUser = this.userData.favoritos.push(idAnimal)
+    // this.userService.editUser(this.userData._id, updateUser)
   }
 
 }
