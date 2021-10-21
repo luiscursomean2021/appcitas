@@ -1,14 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginGuardGuard } from './Core/Security/login-guard.guard';
+import { TypeUserGuardGuard } from './Core/Security/type-user-guard.guard';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 
-
-const routes: Routes = [{ path: 'Citas', loadChildren: () => import('./citas/citas.module').then(m => m.CitasModule) },
-{ path: 'Auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-{ path: 'animal', loadChildren: () => import('./animal/animal.module').then(m => m.AnimalModule) },
-{ path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
-{ path: 'listaAnimales', loadChildren: () => import('./animal-list/animal-list.module').then(m => m.AnimalListModule) },
-{ path: 'favoritos', component: FavoritosComponent}
+const routes: Routes = [
+  {
+    path: "chat",
+    loadChildren: () => import("./chat/chat.module").then(m => m.ChatModule),
+    //canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'Citas',
+    loadChildren: () => import('./citas/citas.module').then(m => m.CitasModule),
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'Auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+    
+  },
+  {
+    path: 'animal',
+    loadChildren: () => import('./animal/animal.module').then(m => m.AnimalModule),
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+    canActivate: [LoginGuardGuard, TypeUserGuardGuard]
+  },
+  {
+    path:"favoritos",
+    component:FavoritosComponent
+  }
 ];
 
 @NgModule({

@@ -46,7 +46,7 @@ export class FavoritosComponent implements OnInit {
 
   //Obtenemos la lista de animales
   getAnimales() {
-    this.animalService.getAnimales().subscribe(data => {
+    /*this.animalService.getAnimales().subscribe(data => {
       this.listaAnimales = data;
       this.listaFavoritos = data;
       this.listaAnimalesFavoritos();
@@ -54,12 +54,12 @@ export class FavoritosComponent implements OnInit {
       (error) => {
         console.log(error);
       }
-    );
+    );*/
   }
 
   //Filtrado de animales favoritos
   listaAnimalesFavoritos() {
-    if (this.userData !== undefined) {
+    /*if (this.userData !== undefined) {
       for (let i = 0; i < this.listaAnimales.length; i++) {
         for (let j = 0; j <  this.userData.favoritos.length; j++) {
           if (this.listaAnimales[i]._id !== this.userData.favoritos[j]) {
@@ -67,7 +67,7 @@ export class FavoritosComponent implements OnInit {
           }
         }
       }
-    }
+    }*/
   }
 
   //Quitar de la lista de Favoritos
