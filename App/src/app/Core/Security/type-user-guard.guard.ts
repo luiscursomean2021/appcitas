@@ -14,7 +14,7 @@ export class TypeUserGuardGuard implements CanActivate {
       if(token!=null){
       token = JSON.parse(atob(token.split('.')[1])); //hago un json parse .atob para splitear el token para comparar si es administrador o cliente
       }     
-   if(token.tipoUsuario=="Administrador"){
+   if(token.userType=="Administrador"){
     return true;
    }else{
      return false;
