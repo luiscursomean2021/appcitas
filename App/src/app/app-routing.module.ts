@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuardGuard } from './Core/Security/login-guard.guard';
 import { TypeUserGuardGuard } from './Core/Security/type-user-guard.guard';
-import { FavoritosComponent } from './favoritos/favoritos.component';
 
 const routes: Routes = [
   {
@@ -30,10 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
     canActivate: [LoginGuardGuard, TypeUserGuardGuard]
   },
-  {
-    path:"favoritos",
-    component:FavoritosComponent
-  }
+  { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
 ];
 
 @NgModule({

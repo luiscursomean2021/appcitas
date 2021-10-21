@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 //Interfaces
-import { Animal } from '../Core/Interfaces/Animal';
-import { User } from '../Core/Interfaces/User';
+import { Animal } from '../../Core/Interfaces/Animal';
+import { User } from '../../Core/Interfaces/User';
 
 //Servicios
-import { AnimalService } from '../Core/Services/Animal.service'
-import { UsersService } from '../Core/Services/users.service'
+import { AnimalService } from '../../Core/Services/Animal.service'
+import { UsersService } from '../../Core/Services/users.service';
+
 
 @Component({
   selector: 'app-favoritos',
@@ -24,8 +25,18 @@ export class FavoritosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.newUser();
   }
 
+  newUser(){
+    this.userData  = {
+      username: "",
+      email:"",
+      password: "",
+      favoritos: [],
+      bloqueos: []
+    }
+  }
   //Obtenemos los datos del usuario
   getUser() {
     let token: any = sessionStorage.getItem("token");
@@ -61,8 +72,9 @@ export class FavoritosComponent implements OnInit {
   listaAnimalesFavoritos() {
     /*if (this.userData !== undefined) {
       for (let i = 0; i < this.listaAnimales.length; i++) {
-        for (let j = 0; j <  this.userData.favoritos.length; j++) {
-          if (this.listaAnimales[i]._id !== this.userData.favoritos[j]) {
+        let temp:any = this.userData.favoritos;
+        for (let j = 0; j < temp.length; j++) {
+          if (this.listaAnimales[i]._id !== temp[j]) {
             this.listaFavoritos.splice(j, 1);
           }
         }

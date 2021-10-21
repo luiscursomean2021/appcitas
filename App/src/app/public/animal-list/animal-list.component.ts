@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-//Interfaces
-import { Animal } from '../Core/Interfaces/Animal';
-import { User } from '../Core/Interfaces/User';
-
-//Servicios
-import { AnimalService } from '../Core/Services/Animal.service'
-import { UsersService } from '../Core/Services/users.service'
+import { Animal } from 'src/app/Core/Interfaces/Animal';
+import { User } from 'src/app/Core/Interfaces/User';
+import { AnimalService } from 'src/app/Core/Services/Animal.service';
+import { UsersService } from 'src/app/Core/Services/users.service';
 
 @Component({
   selector: 'app-animal-list',
@@ -58,9 +54,10 @@ export class AnimalListComponent implements OnInit {
   //Filtrado de lista de animales
   listaAnimalesSinBloqueos() {
     if (this.userData !== undefined) {
-      for (let i = 0; i < this.userData.bloqueos.length; i++) {
+        let temp:any = this.userData.bloqueos;
+      for (let i = 0; i < temp.length; i++) {
         for (let j = 0; j < this.listaAnimales.length; j++) {
-          if (this.userData.bloqueos[i] == this.listaAnimales[j]._id) {
+          if (temp[i] == this.listaAnimales[j]._id) {
             this.listaAnimalesUser.splice(j, 1);
           }
         }
