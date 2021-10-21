@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from '../Interfaces/User';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class UsersService {
 
   constructor(private http:HttpClient, private route: Router) { }
 
-  url = "http://localhost:8080/users/";
+  url = `${environment.urlUsuarios}`;
   
   getUsers():Observable<any> {
     return this.http.get(this.url)
@@ -23,6 +24,8 @@ export class UsersService {
       })
     );
   }
+
+  
 
   insertUser(user:User):Observable<any>{
     console.log("insert");
