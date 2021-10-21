@@ -26,8 +26,8 @@ export class FormComponent implements OnInit {
       edad: 0,
       tamanio: "",
       vacunas: false,
-      //imagen: "",
-      //id_usuario: ""
+      imagen: "",
+      id_usuario: ""
     }
   }
 
@@ -102,8 +102,8 @@ export class FormComponent implements OnInit {
       edad: this.formGroup.value.edad,
       tamanio: this.formGroup.value.tamanio,
       vacunas: this.formGroup.value.vacunas,
-      //imagen: this.formGroup.value.imagen,
-      //id_usuario: this.formGroup.value.id_usuario
+      imagen: this.formGroup.value.imagen,
+      id_usuario: this.formGroup.value.id_usuario
     };
     // console.log(this.animal)
     this.service.create(this.animal).subscribe();
