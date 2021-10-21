@@ -8,12 +8,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
-import { FavoritosComponent } from './favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FavoritosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
