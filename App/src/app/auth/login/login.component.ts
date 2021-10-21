@@ -46,17 +46,27 @@ export class LoginComponent {
         (token) => {
           sessionStorage.setItem('token', JSON.stringify(token)),
             console.log("hoalalallalalall");
-
-          this.route.navigate(['/animal']);
-
+            this.chektoken();
         },
         (error) => this.onError(error)
       );
   }
+
+  chektoken(){
+    let token:any = sessionStorage.getItem("token");
+    if(token!=null){
+    token = JSON.parse(atob(token.split('.')[1]));
+    }     
+ if(token.userType=="Administrador"){
+  this.route.navigate(['/users']);
+ }else{
+  this.route.navigate(['/animal']);
+ }   
+  }
   //#endregion
   //#region Metodo Registro
   irRegistro() {
-    this.route.navigate(['/registro']);
+    this.route.navigate(['/auth/registro']);
   }
   //#endregion
 }

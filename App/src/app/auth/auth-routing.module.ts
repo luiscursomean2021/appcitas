@@ -5,12 +5,11 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [{
-  path: '', component: AuthComponent, children: [
-    { path: '', component: LoginComponent },
+  
+     path: '', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
     { path: 'login', component: LoginComponent },
-  ]
-},
+  
 
 ];
 @NgModule({

@@ -48,12 +48,12 @@ onSubmit(): void {
       username:this.registerForm.value.username
     })
     .subscribe(token => {
-      this.route.navigate(["/login"]);
+      this.route.navigate(["/auth/login"]);
     },
     error => this.onError(error)
     );
   }
 getBack(){
-    this.route.navigate(["/login"]);
+    this.route.navigate(["/auth/login"]);
   }
 }
