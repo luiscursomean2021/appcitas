@@ -4,7 +4,7 @@
       <mat-card-title>
         Usuarios
       </mat-card-title>
-      <button mat-raised-button color="primary" routerLink="/users/newUser" class="botonNuevo"> Nuevo </button>
+      <button mat-raised-button color="primary" routerLink="/users/newUser"><mat-icon>add</mat-icon> Nuevo </button>
     </mat-card-header>
     <mat-card-content>
 
@@ -40,10 +40,10 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
           <td mat-cell *matCellDef="let row">
             <button mat-flat-button color="primary" routerLink="/users/editUser/{{row._id}}">
-              Editar
+              <mat-icon>edit</mat-icon>
             </button>
             <button mat-flat-button color="warn" (click)="delete(row._id)">
-              Borrar
+              <mat-icon>delete</mat-icon>
             </button>
           </td>
         </ng-container>

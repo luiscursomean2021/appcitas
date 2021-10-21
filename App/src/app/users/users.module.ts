@@ -16,6 +16,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { UsersComponent } from './users.component';
 import { UsersService } from '../Core/Services/users.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],providers:[
     UsersService
   ]

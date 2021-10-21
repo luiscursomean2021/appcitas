@@ -1,3 +1,6 @@
 .full-width-table {
   width: 100%;
 }
+
+td button { margin: 1%; }
+mat-card-header { display:flex; justify-content:space-between;}
