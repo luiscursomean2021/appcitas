@@ -13,6 +13,7 @@ export class UsersFormComponent {
   
   user!: User;
   formGroup!: FormGroup;
+  newUser: boolean = true;
 
   constructor(private userService:UsersService, private route:ActivatedRoute, private router:Router, private formBuilder: FormBuilder) {
     this.populateNewUser();
@@ -25,6 +26,7 @@ export class UsersFormComponent {
       if(typeof params.id !== "undefined") {
         this.userService.findUserById(params.id).subscribe(data => {
           if(data._id === params.id) {
+            this.newUser = false;
             this.user = data;
             this.buildUserForm();
           } else {
@@ -41,7 +43,7 @@ export class UsersFormComponent {
     this.user = {
       username: '',
       email: '',
-      password: ''
+      password: '',
     }
   }
 
