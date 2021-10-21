@@ -72,10 +72,8 @@ export class AnimalListComponent implements OnInit {
 
   //Añadir a la lista de Favoritos
   addFavoritos(idAnimal: string) {
-    let tempFav:any = this.userData.favoritos;
-    let updateUser = tempFav.push(idAnimal)
+    // let updateUser = this.userData.favoritos.push(idAnimal)
     // this.userService.editUser(this.userData._id, updateUser)
-    this.userService.editUser()
   }
 
 }

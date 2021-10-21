@@ -44,7 +44,7 @@ export class FavoritosComponent implements OnInit {
       token = JSON.parse(atob(token.split('.')[1]));
     }
     let idUser = token.id;
-    
+
     this.userService.findUserById(idUser).subscribe(data => {
       this.userData = data;
       this.getAnimales();
@@ -57,7 +57,7 @@ export class FavoritosComponent implements OnInit {
 
   //Obtenemos la lista de animales
   getAnimales() {
-    this.animalService.getAnimales().subscribe(data => {
+    /*this.animalService.getAnimales().subscribe(data => {
       this.listaAnimales = data;
       this.listaFavoritos = data;
       this.listaAnimalesFavoritos();
@@ -65,12 +65,12 @@ export class FavoritosComponent implements OnInit {
       (error) => {
         console.log(error);
       }
-    );
+    );*/
   }
 
   //Filtrado de animales favoritos
   listaAnimalesFavoritos() {
-    if (this.userData !== undefined) {
+    /*if (this.userData !== undefined) {
       for (let i = 0; i < this.listaAnimales.length; i++) {
         let temp:any = this.userData.favoritos;
         for (let j = 0; j < temp.length; j++) {
@@ -79,7 +79,7 @@ export class FavoritosComponent implements OnInit {
           }
         }
       }
-    }
+    }*/
   }
 
   //Quitar de la lista de Favoritos

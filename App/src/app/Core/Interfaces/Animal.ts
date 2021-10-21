@@ -3,7 +3,7 @@ export interface Animal {
     nombre: string,
     edad:number,
     raza:string,
-    tamanio:string,
+  tamanio: string,
     vacunas:boolean,
     imagen:string,
     id_usuario: string,
