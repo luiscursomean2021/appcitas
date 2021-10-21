@@ -134,7 +134,7 @@ app.post('/register',async (req, res) => {
 });
 
 
-//app.use("/user", usuariosRoute);
+app.use("/usuarios", usuariosRoute);
 app.use("/animales", animalesRoute);
 
 

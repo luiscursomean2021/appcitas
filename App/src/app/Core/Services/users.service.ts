@@ -25,6 +25,8 @@ export class UsersService {
     );
   }
 
+  
+
   insertUser(user:User):Observable<any>{
     console.log("insert");
     console.log(user);
