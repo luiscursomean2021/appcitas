@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: AnimalComponent, children:[
     { path: '', component: ListaComponent },
     { path: 'nuevo', component: FormComponent },
-    { path: ':id', component: FormComponent }
+    { path: 'edit/:id', component: FormComponent }
   ] },
 ];
 
