@@ -25,11 +25,7 @@ export class UsersService {
     );
   }
 
-  
-
   insertUser(user:User):Observable<any>{
-    console.log("insert");
-    console.log(user);
     return this.http.post(this.url, user, {responseType: "json"})
     .pipe(
       catchError(e => {
