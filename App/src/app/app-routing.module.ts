@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: "chat",
     loadChildren: () => import("./chat/chat.module").then(m => m.ChatModule),
-    canActivate: [LoginGuardGuard]
+    //canActivate: [LoginGuardGuard]
   },
   {
     path: 'Citas',
@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'Auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    canActivate: [LoginGuardGuard]
+    
   },
   {
     path: 'animal',
