@@ -3,7 +3,7 @@
         <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm">
             <mat-form-field class="full-width">
                 <input matInput placeholder="Insert Username" formControlName="username" />
                 <mat-error *ngIf="loginForm.controls['username'].hasError('required')">

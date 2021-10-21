@@ -14,8 +14,9 @@ const routes: Routes = [
     loadChildren: () => import('./citas/citas.module').then(m => m.CitasModule),
     canActivate: [LoginGuardGuard]
   },
+  { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
   {
-    path: '',
+    path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
     
   },
@@ -29,7 +30,6 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
     canActivate: [LoginGuardGuard, TypeUserGuardGuard]
   },
-  { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
 ];
 
 @NgModule({

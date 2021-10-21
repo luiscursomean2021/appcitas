@@ -9,15 +9,15 @@ import { environment } from 'src/environments/environment';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent {
   urlApiLogin = `${environment.urlLogin}`;//uso variable que tengo en enviroments donde tengo todas las url
 
   loginForm = this.fb.group({//formulario que uso para validar datos
     username: [null, Validators.required],
     password: [null, Validators.required],
   });
-  constructor(private fb: FormBuilder,private httpClient: HttpClient, private route: Router) {}
-  
+  constructor(private fb: FormBuilder, private httpClient: HttpClient, private route: Router) { }
+
   //#region Metodo On Error
   private onError(err: any) {
     const error_no_existe = 404;
@@ -34,26 +34,24 @@ export class LoginComponent  {
   onSubmit(): void {
   }
 
-  irLogin(){
-    
-  this.httpClient
-  .post<any>(this.urlApiLogin, {
-    username: this.loginForm.value.username,
-    password: this.loginForm.value.password,
-  })
-  
-  .subscribe(
-    
-    
-    (token) => { 
-      sessionStorage.setItem('token', JSON.stringify(token)),
-      console.log("hoalalallalalall");
-      
-      this.route.navigate(['/animal']);
-      
-    },
-    (error) => this.onError(error)
-  );
+  irLogin() {
+
+    this.httpClient
+      .post<any>(this.urlApiLogin, {
+        username: this.loginForm.value.username,
+        password: this.loginForm.value.password,
+      })
+
+      .subscribe(
+        (token) => {
+          sessionStorage.setItem('token', JSON.stringify(token)),
+            console.log("hoalalallalalall");
+
+          this.route.navigate(['/animal']);
+
+        },
+        (error) => this.onError(error)
+      );
   }
   //#endregion
   //#region Metodo Registro
