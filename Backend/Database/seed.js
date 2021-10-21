@@ -6,8 +6,44 @@ const dbName = 'appcitas';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 //Seed de usuarios
-const users = [
-     
+const users = [{
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc1"),
+        username: 'Carlos',
+        email: 'carlos@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    },
+    {
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc2"),
+        username: 'David',
+        email: 'david@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    }, {
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc3"),
+        username: 'Luis',
+        email: 'luis@gmail.com',
+        password: '12345',
+        userType: 'Administrador'
+    }, {
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc4"),
+        username: 'Emilio',
+        email: 'emilio@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    }, {
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc5"),
+        username: 'Juan',
+        email: 'juan@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    }, {
+        _id: new mongoose.mongo.ObjectId("4f88592a06c05e4de90d0bc6"),
+        username: 'David',
+        email: 'david@gmail.com',
+        password: '12345',
+        userType: 'Cliente'
+    },
     {
         _id: new mongoose.mongo.ObjectId(),
         username: 'admin',
