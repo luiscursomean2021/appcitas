@@ -4,11 +4,13 @@ import { ChatComponent } from './components/chat/chat.component';
 import { ChatRoutingModule } from './chat-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ChatService } from './services/chat.service';
+import { ListadoChatsComponent } from './components/listado-chats/listado-chats.component';
 
 
 @NgModule({
   declarations: [
-    ChatComponent
+    ChatComponent,
+    ListadoChatsComponent
   ],
   imports: [
     CommonModule,
