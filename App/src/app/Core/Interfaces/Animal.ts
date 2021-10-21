@@ -6,5 +6,6 @@ export interface Animal {
   tamanio: string,
     vacunas:boolean,
     imagen:string,
-    id_usuario: string
+    id_usuario: string,
+    descripcion?:string
 }
