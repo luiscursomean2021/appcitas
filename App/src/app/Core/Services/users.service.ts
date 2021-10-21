@@ -15,7 +15,13 @@ export class UsersService {
   url = "http://localhost:8080/users/";
   
   getUsers():Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(this.url)
+    .pipe(
+      catchError(e => {
+        console.log(e);
+        return throwError(e);
+      })
+    );
   }
 
   insertUser(user:User):Observable<any>{
@@ -31,14 +37,32 @@ export class UsersService {
   }
 
   deleteUser(id:string):Observable<any>{
-    return this.http.delete(this.url + id);
+    return this.http.delete(this.url + id)
+    .pipe(
+      catchError(e => {
+        console.log(e);
+        return throwError(e);
+      })
+    );
   }
 
   findUserById(id:string):Observable<any>{
-    return this.http.get(this.url + id);
+    return this.http.get(this.url + id)
+    .pipe(
+      catchError(e => {
+        console.log(e);
+        return throwError(e);
+      })
+    );
   }
 
   editUser(user:User):Observable<any>{
-    return this.http.put(this.url + user._id, user);
+    return this.http.put(this.url + user._id, user)
+    .pipe(
+      catchError(e => {
+        console.log(e);
+        return throwError(e);
+      })
+    );
   }
 }
