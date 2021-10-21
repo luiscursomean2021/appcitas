@@ -24,7 +24,7 @@ animalRoute.route('/:id').get((req, res) => {
     });
 })
 
-animalRoute.route('/:id').post((req, res) => {
+animalRoute.route('/').post((req, res) => {
     Animal.create(req.body, (err, data) => {
         if (err) {
             res.json(err);

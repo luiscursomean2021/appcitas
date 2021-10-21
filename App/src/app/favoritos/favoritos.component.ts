@@ -6,7 +6,7 @@ import { User } from '../Core/Interfaces/User';
 
 //Servicios
 import { AnimalService } from '../Core/Services/Animal.service'
-//import { UserService } from '../Core/Services/User.service'
+import { UsersService } from '../Core/Services/users.service'
 
 @Component({
   selector: 'app-favoritos',
@@ -20,7 +20,7 @@ export class FavoritosComponent implements OnInit {
   userData!: User;
   listaFavoritos: Animal[] = [];
 
-  constructor(private animalService: AnimalService) { }
+  constructor(private animalService: AnimalService, private userService: UsersService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -28,15 +28,20 @@ export class FavoritosComponent implements OnInit {
 
   //Obtenemos los datos del usuario
   getUser() {
-    /*let idUser = sessionStorage.getItem('idUser'); //TODO
-    this.userService.getUser(idUser).subscribe(data => {
+    let token: any = sessionStorage.getItem("token");
+    if (token != null) {
+      token = JSON.parse(atob(token.split('.')[1]));
+    }
+    let idUser = token.id;
+
+    this.userService.findUserById(idUser).subscribe(data => {
       this.userData = data;
       this.getAnimales();
     },
       (error) => {
         console.log(error);
       }
-    );*/
+    );
   }
 
   //Obtenemos la lista de animales
@@ -67,10 +72,10 @@ export class FavoritosComponent implements OnInit {
 
   //Quitar de la lista de Favoritos
   delFavoritos(idAnimal: string) {
-    /*let updateUser = this.userData.favoritos.splice(idAnimal) //TODO eliminar de favoritos del usuario una pos
-    this.userService.updateUser(this.userData._id, updateUser).subscribe(() => {
-      this.listaAnimalesFavoritos();
-    })*/
+    // let updateUser = this.userData.favoritos.splice(idAnimal) //TODO eliminar de favoritos del usuario una pos
+    // this.userService.editUser(this.userData._id, updateUser).subscribe(() => {
+    //   this.listaAnimalesFavoritos();
+    // })
   }
 
 }

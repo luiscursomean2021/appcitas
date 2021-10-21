@@ -13,10 +13,15 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { UsersComponent } from './users.component';
+import { UsersService } from '../Core/Services/users.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
-  declarations: [UsersFormComponent, UsersListComponent],
+  declarations: [UsersFormComponent, UsersListComponent, UsersComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
@@ -28,7 +33,11 @@ import { MatSortModule } from '@angular/material/sort';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    HttpClientModule,
+    MatIconModule
+  ],providers:[
+    UsersService
   ]
 })
 export class UsersModule { }

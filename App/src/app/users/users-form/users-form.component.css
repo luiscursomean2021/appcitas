@@ -25,3 +25,7 @@
 .col:last-child {
   margin-right: 0;
 }
+
+button { margin-left: 1%; }
+mat-form-field { margin: 1%; }
+.cntBotones { margin-left: 1%; }

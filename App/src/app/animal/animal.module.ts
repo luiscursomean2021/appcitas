@@ -16,7 +16,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     CommonModule,
     AnimalRoutingModule,
     MatTableModule,
+    MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
     MatButtonModule,

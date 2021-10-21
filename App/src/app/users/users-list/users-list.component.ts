@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { User } from 'src/app/Core/Interfaces/User';
+import { UsersService } from 'src/app/Core/Services/users.service';
 import { UsersListDataSource } from './users-list-datasource';
 
 @Component({
@@ -17,20 +18,18 @@ export class UsersListComponent implements AfterViewInit {
   dataSource!: UsersListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'username', 'email', 'acciones'];
 
-  constructor() {}
+  constructor(private userService: UsersService) {}
 
   ngAfterViewInit(): void {
     this.refreshData();
   }
 
   refreshData() {
-    /*this.usersService.getUsuarios().subscribe(data => {
-      this.listaUsuarios = data;
+    this.userService.getUsers().subscribe(data => {
       this.initTableData(data);
-    });*/
-    console.log("refresh data");
+    });
   }
 
   initTableData(data:User[]) {
@@ -40,4 +39,9 @@ export class UsersListComponent implements AfterViewInit {
       this.table.dataSource = this.dataSource;
   }
 
+  delete(id:string){
+    this.userService.deleteUser(id).subscribe(data => {
+      this.refreshData();
+    })
+  }
 }
