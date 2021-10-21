@@ -1,4 +1,10 @@
-<h1 >Lista de Animales</h1>
-<button mat-flat-button color="primary"> Crear Animal </button>
-<router-outlet>
-</router-outlet>
+<mat-card>
+    <mat-card-title>
+        <p>Animales</p>
+        <button mat-flat-button color="primary" routerLink="nuevo"> Crear Animal </button>
+    </mat-card-title>
+    <mat-card-content>
+        <router-outlet>
+        </router-outlet>
+    </mat-card-content>
+</mat-card>

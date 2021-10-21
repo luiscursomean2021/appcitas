@@ -12,6 +12,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AnimalService } from '../Core/Services/Animal.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -22,13 +28,19 @@ import { AnimalService } from '../Core/Services/Animal.service';
     CommonModule,
     AnimalRoutingModule,
     MatTableModule,
+    MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
-  providers:[
+  providers: [
     AnimalService
   ]
 })

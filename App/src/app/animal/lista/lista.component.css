@@ -1,3 +1,27 @@
 .full-width-table {
-  width: 100%;
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+table td {
+    font-family: 16px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vacunas {
+    color: green;
 }

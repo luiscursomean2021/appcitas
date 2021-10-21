@@ -25,16 +25,6 @@ export class ListaComponent implements AfterViewInit {
     this.dataSource = new ListaDataSource([]);
   }
 
-  ngOnInit() {
-    this.service.getAnimales().subscribe(data => {
-      this.dataSource = new ListaDataSource(data);
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-      this.table.dataSource = this.dataSource;
-
-    });
-  }
-
   ngAfterViewInit(): void {
     this.service.getAnimales().subscribe(data => {
       this.dataSource = new ListaDataSource(data);
@@ -42,5 +32,30 @@ export class ListaComponent implements AfterViewInit {
       this.dataSource.paginator = this.paginator;
       this.table.dataSource = this.dataSource;
     });
+  }
+
+
+  initTable(data: Animal[]) {
+    this.dataSource = new ListaDataSource(data);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.dataSource;
+  }
+
+  delete(animal: Animal) {
+    this.service.remove(animal).subscribe(
+      data => {
+        this.refresh();
+        alert("eliminado");
+      }
+    );
+  }
+  refresh() {
+    this.service.getAnimales().subscribe(
+      data=>{
+        this.lstAnimal = data;
+        this.initTable(this.lstAnimal);
+      }
+    )
   }
 }
