@@ -32,24 +32,33 @@ export class LoginComponent  {
   }
 
   onSubmit(): void {
+  }
 
+  irLogin(){
+    
   this.httpClient
-      .post<any>(this.urlApiLogin, {
-        username: this.loginForm.value.username,
-        password: this.loginForm.value.password,
-      })
-      .subscribe(
-        (token) => { 
-          sessionStorage.setItem('token', JSON.stringify(token)),
-          this.route.navigate(['/animal']);
-        },
-        (error) => this.onError(error)
-      );
+  .post<any>(this.urlApiLogin, {
+    username: this.loginForm.value.username,
+    password: this.loginForm.value.password,
+  })
+  
+  .subscribe(
+    
+    
+    (token) => { 
+      sessionStorage.setItem('token', JSON.stringify(token)),
+      console.log("hoalalallalalall");
+      
+      this.route.navigate(['/animal']);
+      
+    },
+    (error) => this.onError(error)
+  );
   }
   //#endregion
   //#region Metodo Registro
   irRegistro() {
-    this.route.navigate(['/Auth/registro']);
+    this.route.navigate(['/registro']);
   }
   //#endregion
 }
