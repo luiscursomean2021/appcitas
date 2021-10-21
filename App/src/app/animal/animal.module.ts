@@ -10,6 +10,13 @@ import { FormComponent } from './form/form.component';
 import { AnimalComponent } from './animal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { AnimalService } from '../Core/Services/Animal.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,16 @@ import { MatIconModule } from '@angular/material/icon';
     MatPaginatorModule,
     MatSortModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSelectModule
+  ],
+  providers: [
+    AnimalService
   ]
 })
 export class AnimalModule { }
