@@ -32,9 +32,6 @@ mongoose.connect(dbconfig.db, { useNewUrlParser: true }).then(() => {
     console.log(error);
 });
 
-
-
-
 //Creación y puesta a la escucha del server del chat
 const http = require('http');
 app.set("port", puertoChat);
@@ -66,11 +63,6 @@ server.listen(puertoChat,
         console.log('Servidor Chat Iniciado:  http://localhost:' + puertoChat)
     }
 );
-
-
-
-
-
 
 function filtroAutorizacion() { //function autorizacion  que es lo mismo que el verify pero lo hago para implementarlo en el 1 get de datos / linea 100
     return (req, res, next) => {
