@@ -135,7 +135,7 @@ app.post('/register',async (req, res) => {
 
 
 //app.use("/user", usuariosRoute);
-//app.use("/animales", animalesRoute);
+app.use("/animales", animalesRoute);
 
 
 app.get('/', filtroAutorizacion(), (req, res) => {//creo metodo que comprobara siempre la funcion creada arriba
