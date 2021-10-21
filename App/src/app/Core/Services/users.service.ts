@@ -12,7 +12,7 @@ export class UsersService {
 
   constructor(private http:HttpClient, private route: Router) { }
 
-  url = "http://localhost:8080/users/";
+  url = "http://localhost:4000/users/";
   
   getUsers():Observable<any> {
     return this.http.get(this.url)
