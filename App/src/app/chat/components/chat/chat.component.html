@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row">
-      <h2>Instant Chat</h2>
+      <h2 i18n>Instant Chat</h2>
       <hr>
     </div>
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username" i18n>Username</label>
           <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
         </div>
       </div>
@@ -30,7 +30,7 @@
         <input type="text" class="form-control" [(ngModel)]="messageText">
       </div>
       <div class="col-sm-2">
-        <button type="button" class="btn btn-success pull-right" (click)="sendMessage()">Send</button>
+        <button type="button" class="btn btn-success pull-right" (click)="sendMessage()" i18n>Send</button>
       </div>
     </div>
   </div>

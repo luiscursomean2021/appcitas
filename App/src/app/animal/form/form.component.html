@@ -2,53 +2,53 @@
     <mat-card-content>
         <form [formGroup]="formGroup">
             <mat-form-field>
-                <mat-label>Usuario</mat-label>
+                <mat-label i18n>Usuario</mat-label>
                 <div *ngIf=" animal._id != undefined; else usuario">
                     <input matInput type="text" formControlName="id_usuario" value="{{animal.id_usuario}}" readonly>
                 </div>
                 <ng-template #usuario>
                     <mat-select formControlName="id_usuario">
-                        <mat-option value="_id_123_4569">User 1</mat-option>
+                        <mat-option value="_id_123_4569" i18n>User 1</mat-option>
                         <mat-option value="_id">User 2</mat-option>
                     </mat-select>
                 </ng-template>
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Nombre</mat-label>
+                <mat-label i18n>Nombre</mat-label>
                 <input matInput type="text" formControlName="nombre" value="{{animal.nombre}}">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Edad</mat-label>
+                <mat-label i18n>Edad</mat-label>
                 <input matInput type="number" formControlName="edad" value="{{animal.edad}}">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Raza</mat-label>
+                <mat-label i18n>Raza</mat-label>
                 <input matInput type="text" formControlName="raza" value="{{animal.raza}}">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Tamaño</mat-label>
+                <mat-label i18n>Tamaño</mat-label>
                 <mat-select formControlName="tamanio" [(value)]="animal.tamanio">
-                    <mat-option value=pequenio>Pequeño</mat-option>
-                    <mat-option value=mediano>Mediano</mat-option>
-                    <mat-option value=grande>Grande</mat-option>
+                    <mat-option value=pequenio i18n>Pequeño</mat-option>
+                    <mat-option value=mediano i18n>Mediano</mat-option>
+                    <mat-option value=grande i18n>Grande</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Vacunas</mat-label>
+                <mat-label i18n>Vacunas</mat-label>
                 <mat-select formControlName="vacunas" [(value)]="animal.vacunas">
-                    <mat-option value=true>SI</mat-option>
-                    <mat-option value=false>NO</mat-option>
+                    <mat-option value=true i18n>SI</mat-option>
+                    <mat-option value=false i18n>NO</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Seleccionar Imagen</mat-label>
+                <mat-label i18n>Seleccionar Imagen</mat-label>
                 <input matInput readonly>
                 <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload" multiple="multiple" accept="image/*" formControlName="imagen" value="{{animal.imagen}}" />
             </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary" (click)="crear()">Guardar</button>
-        <button mat-stroked-button color="warn" routerLink="/animal">Cancel</button>
+        <button mat-flat-button color="primary" (click)="crear()" i18n>Guardar</button>
+        <button mat-stroked-button color="warn" routerLink="/animal" i18n>Cancel</button>
     </mat-card-actions>
 </mat-card>

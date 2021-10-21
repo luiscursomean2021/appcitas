@@ -1,29 +1,29 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>
+    <mat-card-title i18n>
         Editar usuario
       </mat-card-title>
   </mat-card-header>
   <mat-card-content>
       <form [formGroup]="formGroup">
           <mat-form-field>
-              <mat-label>Usuario</mat-label>
+              <mat-label i18n>Usuario</mat-label>
               <input matInput formControlName="username">
           </mat-form-field>
           <mat-form-field>
-              <mat-label>Email</mat-label>
+              <mat-label i18n>Email</mat-label>
               <input matInput formControlName="email">
           </mat-form-field>
           <mat-form-field *ngIf="newUser">
-              <mat-label>Contraseña</mat-label>
+              <mat-label i18n>Contraseña</mat-label>
               <input matInput formControlName="password">
           </mat-form-field>
       </form>
   </mat-card-content>
   <mat-card-footer>
       <p class="cntBotones">
-          <button mat-raised-button color="primary" (click)="save()">Guardar</button>
-          <button mat-raised-button color="accent" routerLink="/users">Cancelar</button>
+          <button mat-raised-button color="primary" (click)="save()" i18n>Guardar</button>
+          <button mat-raised-button color="accent" routerLink="/users" i18n>Cancelar</button>
       </p>
   </mat-card-footer>
 </mat-card>
