@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Animal } from '../Interfaces/Animal';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Animal } from '../Interfaces/Animal';
 })
 export class AnimalService {
 
-  urlBase = "http://localhost:8080/animales/";
+  urlBase = `${environment.urlAnimales}`;
 
   constructor(private http: HttpClient) { }
 
