@@ -53,7 +53,5 @@ onSubmit(): void {
     error => this.onError(error)
     );
   }
-getBack(){
-    this.route.navigate(["/auth/login"]);
-  }
+
 }
