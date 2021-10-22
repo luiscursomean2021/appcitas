@@ -3,6 +3,7 @@ import { Animal } from 'src/app/Core/Interfaces/Animal';
 import { User } from 'src/app/Core/Interfaces/User';
 import { AnimalService } from 'src/app/Core/Services/Animal.service';
 import { UsersService } from 'src/app/Core/Services/users.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-animal-list',
@@ -14,7 +15,7 @@ export class AnimalListComponent implements OnInit {
   userData!: User;
   listaAnimalesUser: Animal[] = [];
 
-  constructor(private animalService: AnimalService, private userService: UsersService) { }
+  constructor(private animalService: AnimalService, private userService: UsersService, private _snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -54,7 +55,8 @@ export class AnimalListComponent implements OnInit {
   //Filtrado de lista de animales
   listaAnimalesSinBloqueos() {
     if (this.userData !== undefined) {
-        let temp:any = this.userData.bloqueos;
+      let temp: any = this.userData.bloqueos;
+      console.log(this.userData.bloqueos)
       for (let i = 0; i < temp.length; i++) {
         for (let j = 0; j < this.listaAnimales.length; j++) {
           if (temp[i] == this.listaAnimales[j]._id) {
@@ -71,9 +73,20 @@ export class AnimalListComponent implements OnInit {
   }
 
   //Añadir a la lista de Favoritos
-  addFavoritos(idAnimal: string) {
+  addFavoritos() {
+    this.showSnackBar("MATCH!! ENCONTRASTE A TU AMOR PERRUNO");
     // let updateUser = this.userData.favoritos.push(idAnimal)
     // this.userService.editUser(this.userData._id, updateUser)
+  }
+
+  //Muestra mensajes al usuario
+  showSnackBar(text: string) {
+    this._snackBar.open(text, "", {
+      duration: 5000,
+      horizontalPosition: "center",
+      verticalPosition: "top",
+      panelClass: ['snackbar']
+    });
   }
 
 }
