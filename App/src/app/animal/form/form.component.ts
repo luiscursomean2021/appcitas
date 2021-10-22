@@ -50,6 +50,7 @@ export class FormComponent implements OnInit {
               if (data._id == params.id) {
                 this.animal = data;
                 this.formBuild();
+                this.formGroup.controls["vacunas"].setValue(this.animal.vacunas.toString());
               }
               else this.router.navigate(["/animal"]);
 
