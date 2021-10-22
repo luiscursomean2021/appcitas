@@ -60,7 +60,7 @@ export class LoginComponent {
  if(token.userType=="Administrador"){
   this.route.navigate(['/users']);
  }else{
-  this.route.navigate(['/public']);
+  this.route.navigate(['/']);
  }   
   }
   //#endregion
