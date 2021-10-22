@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'es-ES' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

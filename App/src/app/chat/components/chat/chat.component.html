@@ -1,19 +1,19 @@
 <div class="container-fluid">
     <div class="row">
-      <h2 i18n>Instant Chat</h2>
+      <h2 i18n>Chat instantáneo</h2>
       <hr>
     </div>
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="username" i18n>Username</label>
+          <label for="username" i18n>Nombre usuario</label>
           <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
         </div>
       </div>
        <div class="col sm-2">
         <div style="margin-top:19px;">
-          <button type="button" class="btn btn-primary" (click)="join()">Join</button>
-         <button type="button" class="btn btn-default" (click)="leave()">Leave</button>
+          <button i18n type="button" class="btn btn-primary" (click)="join()">Entrar</button>
+         <button i18n type="button" class="btn btn-default" (click)="leave()">Salir</button>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <input type="text" class="form-control" [(ngModel)]="messageText">
       </div>
       <div class="col-sm-2">
-        <button type="button" class="btn btn-success pull-right" (click)="sendMessage()" i18n>Send</button>
+        <button i18n type="button" class="btn btn-success pull-right" (click)="sendMessage()" i18n>Enviar</button>
       </div>
     </div>
   </div>

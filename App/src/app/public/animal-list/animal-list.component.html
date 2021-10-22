@@ -7,24 +7,14 @@
         </mat-card-header>
         <img mat-card-image src={{item.imagen}} alt="Photo of animal">
         <mat-card-content>
-<<<<<<< HEAD
-            <p i18n>Descripcion: {{item.descripcion}}</p>
-            <p i18n>Tamaño: {{item.tamanio}}</p>
-            <p i18n>Vacunas: {{item.vacunas}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button i18n mat-button (click)="addBloqueos(i)"><mat-icon>block</mat-icon></button>
-            <!-- <button mat-button (click)="addFavoritos({{item._id}})"><mat-icon>favorite_border</mat-icon></button> -->
-=======
             <!-- <p> <span>Descripcion</span>: {{item.descripcion}}</p> -->
-            <p> <span>Tamaño:</span> {{item.tamanio}}</p>
-            <p> <span>Vacunas:</span> {{item.vacunas}}</p>
+            <p> <span i18n>Tamaño:</span> {{item.tamanio}}</p>
+            <p> <span i18n>Vacunas:</span> {{item.vacunas}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="warn" (click)="addBloqueos(i)"><mat-icon>favorite</mat-icon></button>
-            <button mat-button color="link" (click)="addBloqueos(i)"><mat-icon>not_interested</mat-icon></button>
+            <button i18n mat-button color="warn" (click)="addBloqueos(i)"><mat-icon>Favorito</mat-icon></button>
+            <button i18n mat-button color="link" (click)="addBloqueos(i)"><mat-icon>No interesado</mat-icon></button>
             <!-- <button mat-button 1"><mat-icon>favorite_border</mat-icon></button> -->
->>>>>>> main
         </mat-card-actions>
     </mat-card>
 </div>
