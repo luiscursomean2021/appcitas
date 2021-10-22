@@ -74,7 +74,7 @@ export class AnimalListComponent implements OnInit {
 
   //Añadir a la lista de Favoritos
   addFavoritos() {
-    this.showSnackBar("MATCH!! ENCONTRASTE A TU AMOR PERRUNO");
+    this.showSnackBar("MATCH!! encontraste tu amor perruno");
     // let updateUser = this.userData.favoritos.push(idAnimal)
     // this.userService.editUser(this.userData._id, updateUser)
   }
