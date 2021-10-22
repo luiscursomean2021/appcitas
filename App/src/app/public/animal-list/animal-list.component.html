@@ -7,13 +7,14 @@
         </mat-card-header>
         <img mat-card-image src={{item.imagen}} alt="Photo of animal">
         <mat-card-content>
-            <p>Descripcion: {{item.descripcion}}</p>
-            <p>Tamaño: {{item.tamanio}}</p>
-            <p>Vacunas: {{item.vacunas}}</p>
+            <!-- <p> <span>Descripcion</span>: {{item.descripcion}}</p> -->
+            <p> <span>Tamaño:</span> {{item.tamanio}}</p>
+            <p> <span>Vacunas:</span> {{item.vacunas}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button (click)="addBloqueos(i)"><mat-icon>block</mat-icon></button>
-            <!-- <button mat-button (click)="addFavoritos({{item._id}})"><mat-icon>favorite_border</mat-icon></button> -->
+            <button mat-button color="warn" (click)="addBloqueos(i)"><mat-icon>favorite</mat-icon></button>
+            <button mat-button color="link" (click)="addBloqueos(i)"><mat-icon>not_interested</mat-icon></button>
+            <!-- <button mat-button 1"><mat-icon>favorite_border</mat-icon></button> -->
         </mat-card-actions>
     </mat-card>
 </div>
