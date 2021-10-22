@@ -48,7 +48,7 @@ onSubmit(): void {
       username:this.registerForm.value.username
     })
     .subscribe(token => {
-      this.route.navigate(["/auth/login"]);
+      this.route.navigate(["/login"]);
     },
     error => this.onError(error)
     );
