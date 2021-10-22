@@ -60,12 +60,11 @@ export class UsersFormComponent {
     else{
       req = this.userService.insertUser(this.user);
     }
-
     req.subscribe(data => {
       if(typeof data._id !== 'undefined'){
         this.router.navigate(['users']);
       }
-      else alert ("Error al crear o editar. Id undefined");
+      else alert ('Error al crear o editar');
     });
   }
 }

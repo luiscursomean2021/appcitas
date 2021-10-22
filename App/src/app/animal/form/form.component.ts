@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Animal } from 'src/app/Core/Interfaces/Animal';
+import { User } from 'src/app/Core/Interfaces/User';
 import { AnimalService } from 'src/app/Core/Services/Animal.service';
+import { UsersService } from 'src/app/Core/Services/users.service';
 
 @Component({
   selector: 'app-form',
@@ -13,10 +15,13 @@ export class FormComponent implements OnInit {
 
   formGroup!: FormGroup;
   animal!: Animal;
+  userList!: User[];
 
-  constructor(private fb: FormBuilder, private service: AnimalService, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private service: AnimalService, private route: ActivatedRoute, 
+    private userService: UsersService, private router: Router) {
     this.newAnimal();
     this.formBuild();
+    this.getUserList();
   }
 
   newAnimal() {
@@ -60,6 +65,13 @@ export class FormComponent implements OnInit {
     );
   }
 
+  getUserList(){
+    this.userService.getUsers().subscribe(data => {
+      this.userList = data;
+    });  
+  }
+
+
   @ViewChild('UploadFileInput')
   uploadFileInput!: ElementRef;
   myfilename = 'Select File';
@@ -71,7 +83,7 @@ export class FormComponent implements OnInit {
 
       this.myfilename = '';
       Array.from(fileInput.target.files).forEach((file: any) => {
-        console.log(file);
+        //console.log(file);
         this.myfilename += file.name + ',';
       });
 
@@ -95,18 +107,26 @@ export class FormComponent implements OnInit {
     }
   }
 
-  crear() {
-    this.animal = {
-      nombre: this.formGroup.value.nombre,
-      raza: this.formGroup.value.raza,
-      edad: this.formGroup.value.edad,
-      tamanio: this.formGroup.value.tamanio,
-      vacunas: this.formGroup.value.vacunas,
-      imagen: this.formGroup.value.imagen,
-      id_usuario: this.formGroup.value.id_usuario
-    };
-    // console.log(this.animal)
-    this.service.create(this.animal).subscribe();
+  crear(){
+    this.animal = this.formGroup.value;
+    let req;
+    console.log('animal');
+    console.log(this.animal._id);
+    if(this.animal._id){
+      console.log("vamos a editar");
+      req = this.service.update(this.animal);
+    }
+    else{
+      req = this.service.create(this.animal);
+    }
+    req.subscribe(data => {
+      if(typeof data._id !== 'undefined'){
+        console.log('despues del subscribe');
+        console.log(data);
+        this.router.navigate(['animal']);
+      }
+      else alert ('Error al crear o editar');
+    });
   }
 
 }
