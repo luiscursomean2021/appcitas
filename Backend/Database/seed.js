@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('../Models/User')
-const Animal = require('../models/Animal');
+const Animal = require('../Models/Animal');
+const Chat = require('../Models/Chat')
 
 const dbName = 'appcitas';
 mongoose.connect(`mongodb://localhost/${dbName}`);
@@ -157,4 +158,19 @@ Animal
         console.log('Se han creado', response.length)
         mongoose.connection.close()
     })
-    .catch(err => console.log('Hubo un error', err))
+    .catch(err => console.log('Hubo un error', err));
+
+const chats = [
+    {
+        id_user:"4f88592a06c05e4de90d0bc1",
+        id_user2:"4f88592a06c05e4de90d0bc2"
+    }
+];
+
+Chat
+    .create(chats)
+    .then(response => {
+        console.log("Se han creado " + response.length + " chats");
+        mongoose.connection.close();
+    })
+    .catch(err => console.log("Hubo un error al crear los cats:", err));

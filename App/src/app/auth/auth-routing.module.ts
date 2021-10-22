@@ -4,11 +4,13 @@ import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
-const routes: Routes = [{ path: '', component: LoginComponent },
-{ path: 'login', component: LoginComponent },
-
-{ path: 'registro', component: RegistroComponent },
-
+const routes: Routes = [
+  {
+    path: '', component: AuthComponent, children: [
+      { path: '', component: LoginComponent },
+      { path: 'registro', component: RegistroComponent }
+    ]
+  }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

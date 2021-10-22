@@ -1,40 +1,36 @@
-.animal-card {
-  max-width: 250px;
-  background-color: #b1b8df;
-  margin: 20px;
-  box-shadow: 10px 10px 5px grey;
+.mat-card {
+    max-width: 250px;
+    background-color: #b1b8df;
+    margin: 10px;
+    overflow: hidden;
 }
 
 .animal-header-image {
-  background-size: cover;
+    background-size: cover;
 }
 
 .containerCards {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.mat-card-content {
+    color: #f1f1f1;
+    font-weight: lighter;
+}
+
+.mat-card-content span {
+    font-weight: 500;
+    color: black;
 }
 
 .mat-card-actions {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-}
-
-.mat-card-actions .mat-button {
-  margin: 0;
-  text-align: justify;
-}
-
-input {
-  margin: 0 auto;
-  padding: 0;
-  width: 85px;
-}
-
-.mat-card-header {
-  margin: 10px 0px;
+    display: flex;
+    justify-content: space-around;
 }

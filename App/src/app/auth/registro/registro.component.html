@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
     <mat-card class="register-card">
@@ -13,25 +14,35 @@
               <mat-error i18n *ngIf="registerForm.controls['email'].hasError('required')">
                 Email is <strong>required</strong>
               </mat-error>
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
+=======
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="titulo">Registrar Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="registerForm">
             <mat-form-field class="full-width">
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+>>>>>>> main
+            </mat-form-field>
+            <mat-form-field class="full-width">
+<<<<<<< HEAD
               <input matInput placeholder="Insert your Username" formControlName="username"  />
               <mat-error i18n *ngIf="registerForm.controls['username'].hasError('required')">
                 Password is <strong>required</strong>
               </mat-error>
+=======
+                <input matInput placeholder="Username" formControlName="username" />
+                <mat-error *ngIf="registerForm.controls['username'].hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+>>>>>>> main
             </mat-form-field>
-          </div>
-        </div>
-  
-  
-  
-        <div class="row">
-          <div class="col">
             <mat-form-field class="full-width">
+<<<<<<< HEAD
               <input matInput placeholder="Insert your Password" formControlName="password"  type="password"/>
               <mat-error i18n *ngIf="registerForm.controls['password'].hasError('required')">
                 Password is <strong>required</strong>
@@ -51,3 +62,17 @@
     </mat-card>
   </form>
   
+=======
+                <input matInput placeholder="Password" formControlName="password" type="password" />
+                <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="registerForm.invalid">Crear</button>
+        <button mat-flat-button color="warn" routerLink="/login">Cancelar</button>
+    </mat-card-actions>
+</mat-card>
+>>>>>>> main
