@@ -5,6 +5,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button> -->
             <span>App citas</span>
+            <div class="spacer"></div>
+            <button mat-stroked-button color="warn"  (click)="chektoken()"><mat-icon>manage_accounts</mat-icon></button>
+            <button style="margin: 10px" mat-raised-button color="ascent" (click)="logoutUser()"><mat-icon>logout</mat-icon></button>
         </mat-toolbar>
         <div class="container">
             <router-outlet></router-outlet>
