@@ -1,6 +1,6 @@
 .mat-card {
     max-width: 250px;
-    background-color: #b1b8df;
+    background-color: #ff97d9;
     margin: 10px;
     overflow: hidden;
 }
@@ -12,6 +12,7 @@
 .containerCards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 img {
@@ -22,7 +23,7 @@ img {
 
 .mat-card-content {
     color: #f1f1f1;
-    font-weight: lighter;
+    font-weight: 400;
 }
 
 .mat-card-content span {
@@ -32,5 +33,5 @@ img {
 
 .mat-card-actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
