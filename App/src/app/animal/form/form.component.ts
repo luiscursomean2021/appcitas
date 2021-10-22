@@ -37,30 +37,27 @@ export class FormComponent implements OnInit {
   }
 
   formBuild() {
-    this.formGroup = this.fb.group({
-      nombre: "",
-      raza: "",
-      edad: 0,
-      tamanio: "",
-      vacunas: false,
-      imagen: "",
-      id_usuario: ""
-    });
+    this.formGroup = this.fb.group(this.animal);
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(
       params => {
-        if (typeof params.id !== undefined) {
+        //Editar
+        if (typeof params.id !== "undefined") {
           this.service.getAnimal(params.id).subscribe(
             data => {
               if (data._id == params.id) {
-                this.formBuild();
                 this.animal = data;
+                this.formBuild();
               }
+              else this.router.navigate(["/animal"]);
+
             }
           );
         }
+        //Crear
+        this.formBuild();
       }
     );
   }
@@ -71,16 +68,12 @@ export class FormComponent implements OnInit {
     });  
   }
 
-
   @ViewChild('UploadFileInput')
   uploadFileInput!: ElementRef;
   myfilename = 'Select File';
 
   fileChangeEvent(fileInput: any) {
-
     if (fileInput.target.files && fileInput.target.files[0]) {
-
-
       this.myfilename = '';
       Array.from(fileInput.target.files).forEach((file: any) => {
         //console.log(file);
@@ -100,7 +93,7 @@ export class FormComponent implements OnInit {
       };
       reader.readAsDataURL(fileInput.target.files[0]);
 
-      // Reset File Input to Selct Same file again
+      // Reset File Input to Select Same file again
       this.uploadFileInput.nativeElement.value = "";
     } else {
       this.myfilename = 'Select File';
@@ -110,10 +103,7 @@ export class FormComponent implements OnInit {
   crear(){
     this.animal = this.formGroup.value;
     let req;
-    console.log('animal');
-    console.log(this.animal._id);
     if(this.animal._id){
-      console.log("vamos a editar");
       req = this.service.update(this.animal);
     }
     else{
@@ -121,8 +111,6 @@ export class FormComponent implements OnInit {
     }
     req.subscribe(data => {
       if(typeof data._id !== 'undefined'){
-        console.log('despues del subscribe');
-        console.log(data);
         this.router.navigate(['animal']);
       }
       else alert ('Error al crear o editar');
