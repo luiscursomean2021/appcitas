@@ -49,10 +49,10 @@ export class FormComponent implements OnInit {
             data => {
               if (data._id == params.id) {
                 this.animal = data;
+                this.animal.vacunas.toString();
                 this.formBuild();
               }
               else this.router.navigate(["/animal"]);
-
             }
           );
         }
