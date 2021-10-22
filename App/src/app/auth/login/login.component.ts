@@ -66,7 +66,7 @@ export class LoginComponent {
   //#endregion
   //#region Metodo Registro
   irRegistro() {
-    this.route.navigate(['/auth/registro']);
+    this.route.navigate(['/login/registro']);
   }
   //#endregion
 }
