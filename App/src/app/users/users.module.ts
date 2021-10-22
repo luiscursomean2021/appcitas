@@ -17,6 +17,7 @@ import { UsersComponent } from './users.component';
 import { UsersService } from '../Core/Services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -33,9 +34,10 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
+    MatToolbarModule,
     MatSortModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
   ],providers:[
     UsersService
   ]

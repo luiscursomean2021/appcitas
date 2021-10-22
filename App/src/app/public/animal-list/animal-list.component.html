@@ -9,7 +9,7 @@
         <mat-card-content>
             <!-- <p> <span>Descripcion</span>: {{item.descripcion}}</p> -->
             <p> <span>Tamaño:</span> {{item.tamanio}}</p>
-            <p> <span>Vacunas:</span> {{item.vacunas}}</p>
+            <p> <span>Vacunas:</span> {{item.vacunas ? "En regla" : "Debería ir al veterinario"}}</p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button color="warn" (click)="addFavoritos()"><mat-icon>favorite</mat-icon></button>

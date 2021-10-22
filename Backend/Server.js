@@ -18,6 +18,7 @@ mongoose.connect(dbconfig.db, { useNewUrlParser: true }).then(() => {
 //const peliculasRoute = require('./routes/peliculas.route');
 const usuariosRoute = require('./routes/UserRoute');
 const animalesRoute = require('./routes/AnimalRoute');
+const chatRoute = require("./Routes/ChatRoute");
 const Usuario = require('./Models/User');
 const puertoApp = 4000;
 const puertoChat = 4005;
@@ -127,6 +128,9 @@ app.post('/register', async(req, res) => {
 
 app.use("/usuarios", usuariosRoute);
 app.use("/animales", animalesRoute);
+
+//Anadido el archivo de rutas del chat
+app.use("/chat", chatRoute);
 
 
 app.get('/', filtroAutorizacion(), (req, res) => { //creo metodo que comprobara siempre la funcion creada arriba

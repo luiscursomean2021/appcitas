@@ -29,9 +29,7 @@ export class UsersFormComponent {
             this.newUser = false;
             this.user = data;
             this.buildUserForm();
-          } else {
-            this.router.navigate(["/users"]);
-          }
+          } else this.router.navigate(["/users"]);
         })
       }
       //Nuevo usuario
@@ -60,12 +58,11 @@ export class UsersFormComponent {
     else{
       req = this.userService.insertUser(this.user);
     }
-
     req.subscribe(data => {
       if(typeof data._id !== 'undefined'){
         this.router.navigate(['users']);
       }
-      else alert ("Error al crear o editar. Id undefined");
+      else alert ('Error al crear o editar');
     });
   }
 }
