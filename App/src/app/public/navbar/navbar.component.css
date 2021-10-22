@@ -26,4 +26,9 @@
 
 span {
     color: #FEDECE;
+    font-size: 28px;
+}
+
+.mat-icon {
+    font-size: 24px;
 }

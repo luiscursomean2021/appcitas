@@ -1,8 +1,9 @@
 .mat-card {
     max-width: 250px;
-    background-color: #FFB5B5;
+    background-color: #ffeee4;
     margin: 10px;
     overflow: hidden;
+    border: 1px solid #803B80;
 }
 
 .animal-header-image {
@@ -13,7 +14,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #FFC1FF;
+    background-color: #f1f1f1;
 }
 
 img {
@@ -23,7 +24,7 @@ img {
 }
 
 .mat-card-content {
-    color: #FFF7DB;
+    color: #861186;
     font-weight: 400;
 }
 
