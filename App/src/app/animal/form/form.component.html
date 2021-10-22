@@ -7,10 +7,8 @@
                     <input matInput type="text" formControlName="id_usuario" value="{{animal.id_usuario}}" readonly>
                 </div>
                 <ng-template #usuario>
-                    <!-- TODO: AGREGAR USUARIOS DEL SERVICIO. -->
                     <mat-select formControlName="id_usuario">
-                        <mat-option value="_id_123_4569">User 1</mat-option>
-                        <mat-option value="_id">User 2</mat-option>
+                        <mat-option *ngFor="let user of userList" value="{{user._id}}" (click)="prueba(user)">{{user.username}}</mat-option>
                     </mat-select>
                 </ng-template>
             </mat-form-field>

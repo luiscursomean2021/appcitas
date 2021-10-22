@@ -2,7 +2,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Animal } from 'src/app/Core/Interfaces/Animal';
+import { User } from 'src/app/Core/Interfaces/User';
 import { AnimalService } from 'src/app/Core/Services/Animal.service';
+import { UsersService } from 'src/app/Core/Services/users.service';
 
 @Component({
   selector: 'app-form',
@@ -13,10 +15,12 @@ export class FormComponent implements OnInit {
 
   formGroup!: FormGroup;
   animal!: Animal;
+  userList!: User[];
 
-  constructor(private fb: FormBuilder, private service: AnimalService, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private service: AnimalService, private route: ActivatedRoute, private userService: UsersService) {
     this.newAnimal();
     this.formBuild();
+    this.getUserList();
   }
 
   newAnimal() {
@@ -59,6 +63,19 @@ export class FormComponent implements OnInit {
       }
     );
   }
+
+  getUserList(){
+    this.userService.getUsers().subscribe(data => {
+      this.userList = data;
+    });  
+  }
+
+
+  prueba(user: User){
+    console.log(user._id);
+  }
+
+
 
   @ViewChild('UploadFileInput')
   uploadFileInput!: ElementRef;
