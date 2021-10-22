@@ -24,7 +24,6 @@
     margin: auto;
 }
 
-<<<<<<< HEAD
 
 #content { height: calc(100vh - 130px); padding: 16px; overflow: auto; }
 #footer { height: 30px; padding: 0 16px; line-height: 30px; }
@@ -33,8 +32,6 @@
     flex: 1 1 auto;
   }
   
-=======
 span {
     color: #FEDECE;
 }
->>>>>>> e541d6024baf16834c1ae021905d292090578b47
