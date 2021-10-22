@@ -44,6 +44,7 @@ export class AnimalService {
 
   update(animal: Animal): Observable<any> {
     let url = this.urlBase + animal._id;
+  
     return this.http.put(url, animal).pipe(
       map(res => res),
       catchError(e => e)
