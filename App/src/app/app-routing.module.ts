@@ -15,6 +15,7 @@ const routes: Routes = [
     canActivate: [LoginGuardGuard]
   },
   { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule),  canActivate: [LoginGuardGuard] },
+  { path: 'public', loadChildren: () => import('./public/public.module').then(m => m.PublicModule),  canActivate: [LoginGuardGuard] },
   {
     path: 'login',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
@@ -23,7 +24,7 @@ const routes: Routes = [
   {
     path: 'animal',
     loadChildren: () => import('./animal/animal.module').then(m => m.AnimalModule),
-    canActivate: [LoginGuardGuard]
+    canActivate: [LoginGuardGuard,TypeUserGuardGuard]
   },
   {
     path: 'users',

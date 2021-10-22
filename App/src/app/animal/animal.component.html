@@ -1,9 +1,11 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
-    <span><mat-icon>casino</mat-icon> Panel Administración</span>
+    <span> Panel Administración</span>
      <div class="spacer"></div>
          <!--Menu navegacion con routerlink que es la ruta que esta en el app module -->
-     <a mat-button routerLink="/users"><mat-icon>camera_front</mat-icon>Usuarios</a>
-     <a mat-button routerLink="/animal"><mat-icon>camera_front</mat-icon>Animales</a>
+         <a mat-button routerLink="/public"><mat-icon>pets</mat-icon>Listado Animales</a>
+     <a mat-button routerLink="/users"><mat-icon>supervised_user_circle</mat-icon>Usuarios</a>
+     <a mat-button routerLink="/animal"><mat-icon>list</mat-icon>Animales</a>
+     <button style="margin: 10px," mat-raised-button color="ascent" (click)="logoutUser()"><mat-icon>logout</mat-icon></button>
 </mat-toolbar>
 
 <mat-card>
