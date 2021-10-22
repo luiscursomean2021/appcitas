@@ -6,7 +6,7 @@ import { PublicComponent } from './public.component';
 
 const routes: Routes = [
   { path: '', component: NavbarComponent, children:[
-    { path: 'fav', component: AnimalListComponent },
+    { path: 'list', component: AnimalListComponent },
   ] },
 ];
 @NgModule({

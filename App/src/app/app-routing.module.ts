@@ -10,14 +10,14 @@ const routes: Routes = [
     //canActivate: [LoginGuardGuard]
   },
   {
-    path: 'Citas',
+    path: 'citas',
     loadChildren: () => import('./citas/citas.module').then(m => m.CitasModule),
     canActivate: [LoginGuardGuard]
   },
   { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
   { path: 'public', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
   {
-    path: 'auth',
+    path: 'login',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
     
   },

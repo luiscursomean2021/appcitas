@@ -14,6 +14,6 @@ export class LoginGuardGuard implements CanActivate {
     if(token!=null){
     return true;
     }
-    return this.router.navigate(["/auth/login"]); //si es nulo llevame al login
+    return this.router.navigate(["/login"]); //si es nulo llevame al login
   }
 }
