@@ -5,6 +5,8 @@ import { ChatRoutingModule } from './chat-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ChatService } from './services/chat.service';
 import { ListadoChatsComponent } from './components/listado-chats/listado-chats.component';
+import { ListadoChatService } from './services/listado-chat.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,10 +17,12 @@ import { ListadoChatsComponent } from './components/listado-chats/listado-chats.
   imports: [
     CommonModule,
     ChatRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    ChatService
+    ChatService,
+    ListadoChatService
   ]
 })
 export class ChatModule { }
