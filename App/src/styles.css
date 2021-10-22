@@ -3,3 +3,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #f1f1f1;
 }
+
+.snackbar {
+    background: #e44f9c;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: white;
+}

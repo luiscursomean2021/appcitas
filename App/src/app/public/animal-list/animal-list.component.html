@@ -12,7 +12,7 @@
             <p> <span>Vacunas:</span> {{item.vacunas ? "En regla" : "Debería ir al veterinario"}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="warn" (click)="addBloqueos(i)"><mat-icon>favorite</mat-icon></button>
+            <button mat-button color="warn" (click)="addFavoritos()"><mat-icon>favorite</mat-icon></button>
             <button mat-button color="link" (click)="addBloqueos(i)"><mat-icon>not_interested</mat-icon></button>
             <!-- <button mat-button 1"><mat-icon>favorite_border</mat-icon></button> -->
         </mat-card-actions>

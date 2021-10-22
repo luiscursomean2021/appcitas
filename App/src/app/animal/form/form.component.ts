@@ -51,6 +51,7 @@ export class FormComponent implements OnInit {
                 this.animal = data;
                 this.animal.vacunas.toString();
                 this.formBuild();
+                this.formGroup.controls["vacunas"].setValue(this.animal.vacunas.toString());
               }
               else this.router.navigate(["/animal"]);
             }

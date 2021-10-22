@@ -11,7 +11,7 @@
 }
 
 .mat-toolbar {
-    background-color: #ffc1ff;
+    background-color: #803B80;
 }
 
 .mat-toolbar.mat-primary {
@@ -22,4 +22,8 @@
 
 .container {
     margin: auto;
+}
+
+span {
+    color: #FEDECE;
 }
