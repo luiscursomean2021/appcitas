@@ -30,6 +30,13 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
     canActivate: [LoginGuardGuard, TypeUserGuardGuard]
   },
+
+
+
+  {
+    path: '**',
+    redirectTo:'login'
+  }
 ];
 
 @NgModule({
