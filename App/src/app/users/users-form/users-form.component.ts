@@ -29,9 +29,7 @@ export class UsersFormComponent {
             this.newUser = false;
             this.user = data;
             this.buildUserForm();
-          } else {
-            this.router.navigate(["/users"]);
-          }
+          } else this.router.navigate(["/users"]);
         })
       }
       //Nuevo usuario

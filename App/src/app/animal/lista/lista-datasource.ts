@@ -64,7 +64,10 @@ export class ListaDataSource extends DataSource<Animal[]> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.nombre, b.nombre, isAsc);;
+        case 'name': return compare(a.nombre, b.nombre, isAsc);
+        case 'raza': return compare(a.nombre, b.nombre, isAsc);
+        case 'edad': return compare(a.nombre, b.nombre, isAsc);
+        case 'tamanio': return compare(a.nombre, b.nombre, isAsc);
         default: return 0;
       }
     });

@@ -1,6 +1,6 @@
 .mat-card {
     max-width: 250px;
-    background-color: #ff97d9;
+    background-color: #FFB5B5;
     margin: 10px;
     overflow: hidden;
 }
@@ -13,7 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #f4f4f4;
+    background-color: #FFC1FF;
 }
 
 img {
@@ -23,13 +23,13 @@ img {
 }
 
 .mat-card-content {
-    color: white;
+    color: #FFF7DB;
     font-weight: 400;
 }
 
 .mat-card-content span {
     font-weight: 500;
-    color: black;
+    color: #803B80;
 }
 
 .mat-card-actions {

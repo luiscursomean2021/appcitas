@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AnimalRoutingModule } from './animal-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaComponent } from './lista/lista.component';
 import { FormComponent } from './form/form.component';
 import { AnimalComponent } from './animal.component';
@@ -38,7 +38,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   providers: [
     AnimalService
